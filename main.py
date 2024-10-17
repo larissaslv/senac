@@ -6,6 +6,8 @@ import forca
 import Cores
 import Agenda
 import Relações
+
+
 def menu_principal():
     print(''' 
 Menu Principal
@@ -51,6 +53,7 @@ def fn_jogo():
     print("3. Lê de megasena.txt os números e exibe na forma de lista")
     print("4. Exibe um número por extenso")
     print("5.Jogo da forca")
+    print("6. Jogo da velha ")
     print("0. Para voltar pro menu principal ")
 
 def fn_menu_cores():
@@ -135,6 +138,7 @@ while True:
             elif opcao4 == '2': jogos.fn_arqmega()
             elif opcao4 == '3': jogos.fn_listamega()
             elif opcao4 == '5': forca.fn_forca()
+            elif opcao4 == '6': jogos.fn_jogo_da_velha()
             elif opcao4 == '4': break
     elif opcao == '5':
         while True:
@@ -157,6 +161,9 @@ while True:
                 elif opcao2 == '3': Agenda.fn_consultaevento()
                 elif opcao2 == '4': Agenda.fn_apaga_evento()
                 elif opcao2 == '0': break
+                else: print("ERRO - opcao invalida")
+            elif opcao6 == '0': break
+            else: print("ERRO - Opcao invalida")
     elif opcao == '7':
         while True:
             fn_relacoes()
