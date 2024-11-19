@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    body {background-color: white; color:black; font-family: arial}
+    .atr1 {font-family:courier;}
+    .atr2 {color:orange}
+    .atr3 {color:red}
+    .atr4 {color:green}
+    .atr5 {color:blue}
+  </style>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+</head>
+<body>
+<h1>Agenda</h1>
+<table border ='1', class="atr1">
+  <tr><td class="atr2"><a href = " {{ url_pagina }}TC ">Compromissos agendados</a></td><td>{{num_comp}}</td></tr>
+  <tr><td class="atr3"><a href =" {{ url_pagina }}PA ">Alta Prioridade</a></td><td>{{num_alta}}</td></tr>
+  <tr><td class="atr2"><a href = "{{ url_pagina }}PM ">Media Prioridade</a> </td><td>{{num_medi}}</td></tr>
+  <tr><td class="atr4"><a href=" {{ url_pagina }}PB "> Baixa Prioridade </a></td><td>{{num_baix}}</td></tr>
+  <tr><td class="atr5"><a href=" {{ url_pagina }}SA "> Abertos </a></td><td>{{num_aber}}</td></tr>
+  <tr><td class="atr5"><a href=" {{url_pagina}}SC "> Concluidos </a> </td><td>{{num_conc}}</td></tr>
+  <tr><td class="atr5"><a href=" {{url_pagina}} SP "> Pendentes </a></td><td>{{num_pend}}</td></tr>
+</table>
+</body>
+</html>
