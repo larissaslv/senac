@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+    body{background-color:  white; color: black; font-family:arial
+    }
+    .atr1 {font-family:courier;}
+    .atr2{color:blue}
+    .livros{font-family:courier;}
+    .autores{font-family:courier;}
+    .editores{font-family:courier;}
+</style>
+    <title>Biblioteca - Inventário</title>
+</head>
+<body>
+    <h1>Biblioteca - Inventário</h1>
+    <h2>
+        URL da pagina: {{ url_pagina }}<br>
+        você visitou esta página {{ num_visitas }}
+        {% if num_visitas == 1 %} vez
+        {% else %} vezes
+        {% endif %}
+    </h2>
+<table border='1', class="atr1">
+    <tr>
+        <td><a href="{{ url_pagina }}livros"> Livros </a></td>
+        <td>{{ num_livros }}</td>
+    </tr>
+    <tr>
+        <td><a href="{{url_pagina }}livros/exemplares/t">Exemplares</a></td>
+        <td>{{ num_exemplares }}</td>
+    </tr>
+    <tr>
+        <td><a href = "{{url_pagina }}livros/exemplares/t">Disponíveis</a></td>
+
+    </tr>
+</table>
+    <h2>
+        <strong><pre class="livros">Livros : {{num_livros}}</pre></strong>
+        <strong><pre class="livros">Exemplares : {{num_exemplares}}</pre></strong>
+        <strong><pre class="livros">Disponiveis : {{num_disponiveis}}</pre></strong>
+        <strong><pre class="autores">Autores : {{num_autores}}</pre></strong>
+        <strong><pre class="editoras">Editoras : {{num_editores}}</pre></strong>
+    </h2>
+    <h2>
+        <strong><pre class="autores">Autores : {{num_autores}}</pre></strong>
+    </h2>
+    <h2>
+        <strong><pre class="editoras">Editoras : {{num_editoras}}</pre></strong>
+    </h2>
+</body>
+</html>

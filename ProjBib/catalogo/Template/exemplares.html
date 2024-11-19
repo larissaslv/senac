@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>Biblioteca - Exemplares</title>
+</head>
+<body>
+<h1>Biblioteca - Exemplares</h1>
+<h2><strong>URL da pagina: {{ url_ pagina }}</strong></h2>
+<h3>
+  {% if list_exemplares %}
+            <table border="1">
+                <tr style="color: red">
+                    <td>Livros</td>
+                    <td style="color: orange">Detalhes</td>
+                    <td style="color:orange">Retorno</td>
+                    <td style="color:orange">Status</td>
+                </tr>
+                {% for exemplar in list_exemplares %}
+                    <tr style="color:blue">
+                        <td>{{ exemplar.livro }}</td>
+                        <td>{{ exemplar.detalhes }}</td>
+                        <td>{{ exemplar.retorno }}</td>
+                        <td>
+                            {% if exemplar.status == 'm' %} Manutencao {% endif %}
+                            {% if exemplar.status == 'd' %} Disponivel {% endif %}
+                            {% if exemplar.status == 'r' %} Retirado {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+        {% else %}
+            <p>Não há exemplares cadastrados desse livro </p>
+        {% endif %}
+    </h3>
+</body>
+</html>

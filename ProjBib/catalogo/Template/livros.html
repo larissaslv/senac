@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Biblioteca - Livros</title>
+</head>
+<body>
+    <h1>Biblioteca - Livros</h1>
+    <h2>URL da Pagina: {{ url_pagina }}
+        você visitou esta página {{ num_visitas_livros }}
+        {% if num_visitas == 1 %} vez
+        {% else %} vezes
+        {% endif %}
+    </h2>
+    <h3>
+        {% if list_livros %}
+            <table border="1">
+                <tr style="color: red"> #  o tr abre e fecha uma linha
+                    <td>PK</td><td>Titulo</td># O td abre e fecha uma coluna
+                    <td style="color: orange">Autor</td>
+                    <td style="color:orange">Nascimento</td>
+                    <td style="color:orange">Falecimento</td>
+                    <td>Editora</td><td>Categoria</td>
+                </tr>
+                {% for livro in list_livro %}
+                    <tr style="color:blue"> # linha com stilo em azul
+                        <td><a href="{{ url_pagina }}/livro_det/{{ livro.pk }}">{{ livro.pk }}</a></td>
+                        <td><a href="{{ url_pagina }}/exemplares/{{ livro.pk }}">{{ livro.titul }}</a></td>
+                        <td><a href="{{ url_pagina }}/autor_det/{{ livro.pk }}">{{ livro.autor }}</a></td>
+                        <td>{{ livro.autor.dtnasc }}</td>
+                        <td>{{ livro.autor.dtmort }}</td>
+                        <td>{{ livro.edito }}</td>
+                        <td>
+                            {% if livro.categ == 'F' %} Ficção {% endif %}
+                            {% if livro.categ == 'R' %} Romance {% endif %}
+                            {% if livro.categ == 'D' %} Drama {% endif %}
+                            {% if livro.categ == 'T' %} Tecnico {% endif %}
+                            {% if livro.categ == 'I' %} Indefinido {% endif %}
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </table>
+        {% else %}
+            <p>Não há livros cadastrados </p>
+        {% endif %}
+    </h3>
+</body>
+</html>

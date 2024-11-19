@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<style>
+    body{background-color:  white; color: black; font-family:arial
+    }
+    .livros{font-family:courier;}
+</style>
+    <title>Livro - Detalhe</title>
+</head>
+<body>
+    <h1>Livro - Detalhe</h1>
+    <h2>
+        <strong>URL da pagina: {{ url_ pagina }}</strong>
+        <strong><pre class="livros">Titulo : {{ titul }}</pre></strong>
+        <strong><pre class="livros">Autor : {{ autor }}</pre></strong>
+        <strong><pre class="livros">Editora : {{ edito }}</pre></strong>
+        <strong><pre class="livro">Descricao : {{ descr}}</pre></strong>
+        <strong><pre class="livro">Categoria : {{ categ }}</pre></strong>
+        <strong><pre class="livros"> : {{num_editores}}</pre></strong>
+    </h2>
+</body>
+</html>
