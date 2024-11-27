@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+    body{background-color:#DC143C;}
+    .Stylo1{color:Blue}
+    .Style2{color: #8B0000; text-align:center; margin-top:5%; background-color:white; margin-left:30%; margin-right:30%;}
+    .Style3{display:;
+            place-items: center; /* Centraliza horizontal e verticalmente */
+            height: 40vh;
+            width:40%;
+            margin-left:30%;
+            margin-top:5%;
+            text-align:center; background-color:#D8BFD8; color:#DC143C;}
+    .Style4{height: 50%;}
+    .Stylecor{background-text:#DB7093;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Vai dar Namoro</title>
+</head>
+<body>
+<h1 class="Style2"> Vai dar Namoro </h1>
+    <div class="">
+
+
+<h3>
+    {% if list_Candidatos%}
+    <table border="1"; class="Style3"; >
+        <tr style="color:red; background-color:#EE82EE";>
+
+                <td width="100">Nome</td>
+                <td >Esporte</td>
+                <td>Cultura</td>
+                <td>Estudos</td>
+                <td>Musica</td>
+                <td>Festa</td>
+                {% for candidato in list_Candidatos %}
+
+            <tr>
+                <td>{{ candidato.cannome }}</td>
+
+                <td><a href="esp/{{ candidato.EspNome }}">{{ candidato.EspNome }}</a></td>
+                <td><a href="cult/{{ candidato.CultNome }}">{{ candidato.CultNome }}</a></td>
+                <td><a href="est/{{ candidato.EstNome }}">{{ candidato.EstNome }}</a></td>
+                <td><a href="mus/{{candidato.MusNome }}">{{ candidato.MusNome }}</a></td>
+                <td><a href="fest/{{ candidato.FestNome }}">{{ candidato.FestNome }}</a></td>
+             </tr>
+            {% endfor%}
+        </tr>
+    </table>
+     {% endif %}
+</h3>
+</div>
+</body>
+</html>

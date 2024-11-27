@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{background-color:gray}
+    </style>
+    <meta charset="UTF-8">
+    <title>Compatíveis</title>
+</head>
+<body>
+<h1> Candidatos Compatíveis</h1>
+<h2>{{ nome_tit }}</h2>
+    {% if lis_cand_selecionado%}
+     <table border="1">
+                <tr style="color: red">
+                    <td>Nome</td>
+                    {% if prefixo != 'esp' %} <td>Esporte</td> {% endif %}
+                    {% if prefixo != 'mus' %} <td>Musica</td> {% endif %}
+                    {% if prefixo != 'fest' %} <td>Festa</td> {% endif %}
+                    {% if prefixo != 'est' %} <td>Estudo</td> {% endif %}
+                    {% if prefixo != 'cult' %} <td>Cultura</td> {% endif %}
+                    {% for candidato in list_cand_selecionado %}
+                        <tr>
+                            <td>{{ candidato.cannome }}</td>
+                            {% if prefixo != 'esp' %} <td>{{ candidato.EspNome }}</td> {% endif %}
+                            {% if prefixo != 'mus' %} <td>{{ candidato.MusNome }}</td> {% endif %}
+                            {% if prefixo != 'fest' %} <td>{{ candidato.FestNome }}</td> {% endif %}
+                            {% if prefixo != 'est' %} <td>{{ candidato.EstNome }}</td> {% endif %}
+                            {% if prefixo != 'cult' %} <td>{{ candidato.CultNome }}</td> {% endif %}
+                        </tr>
+                {% endfor %}
+                </tr>
+            </table>
+        {% else %}
+            Nenhum candidato cadastrado para {{ tipo }}!
+        {% endif %}
+        <a href="{{ voltar }}">Voltar</a>
+    </h3>
+
+</body>
+</html>
